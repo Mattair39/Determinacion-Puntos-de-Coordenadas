@@ -1,0 +1,47 @@
+Proceso DeterminacionPuntos
+	Definir coordenadax,coordenaday,totalprimercuadrante,totalsegundocuadrante,totaltercercuadrante,totalcuartocuadrante,primercuadrante,segundocuadrante,tercercuadrante,cuartocuadrante Como Entero
+	Repetir
+		Escribir "Ingrese la coordenada en el eje X: "
+		Leer coordenadax
+		Escribir "Ingrese la coordenada en el eje Y: "
+		Leer coordenaday
+
+	
+		Si coordenadax > 0 y coordenaday > 0 Entonces
+			Escribir "Este punto pertenece al primer cuadrante"
+			primercuadrante<- primercuadrante + 1
+			totalprimercuadrante <- primercuadrante
+		SiNo
+			Si coordenadax < 0 y coordenaday > 0 Entonces
+				Escribir "Este punto pertenece al segundo cuadrante"
+				segundocuadrante <- segundocuadrante + 1
+				totalsegundocuadrante <- segundocuadrante
+			SiNo
+				Si coordenadax < 0 y coordenaday < 0 Entonces
+					Escribir "Este punto pertenece al tercer cuadrante"
+					tercercuadrante <- tercercuadrante + 1
+					totaltercercuadrante <- tercercuadrante
+				SiNo
+					Si coordenadax > 0 y coordenaday < 0 Entonces
+						Escribir "Este punto pertenece al cuarto cuadrante"
+						cuartocuadrante <- cuartocuadrante + 1
+						totalcuartocuadrante <- cuartocuadrante
+					SiNo 
+						Escribir "Se encuentra en el punto de origen"
+					FinSi
+				FinSi
+ 			FinSi
+		FinSi
+		
+		
+	Hasta Que coordenadax = 0 y coordenaday = 0
+	
+	Si coordenadax = 0 y coordenaday = 0 Entonces
+		Escribir "Primer Cuadrante: ", totalprimercuadrante
+		Escribir "Segundo Cuadrante: ", totalsegundocuadrante
+		Escribir "Tercer Cuadrante: ", totaltercercuadrante
+		Escribir "Cuarto Cuadrante: ", totalcuartocuadrante
+	SiNo
+		Escribir "No hay puntos definidos"
+	FinSi
+FinProceso
